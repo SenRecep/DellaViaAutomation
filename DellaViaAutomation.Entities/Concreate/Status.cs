@@ -9,7 +9,6 @@ namespace DellaViaAutomation.Entities.Concreate
 {
     public class Status : ComplexType.EntityBase, Abstract.IStatus
     {
-
         string IStatus.Name { get; set; }
     }
 }

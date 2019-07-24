@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DellaViaAutomation.Entities.Concreate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace DellaViaAutomation.Entities.Abstract
     {
         int Parentid { get; set; }
         string Name { get; set; }
+        ICollection<Product> Products { get; set; }
     }
 }

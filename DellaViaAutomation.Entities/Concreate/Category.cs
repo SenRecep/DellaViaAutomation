@@ -11,5 +11,6 @@ namespace DellaViaAutomation.Entities.Concreate
     {
         public int Parentid { get ; set ; }
         public string Name { get ; set ; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

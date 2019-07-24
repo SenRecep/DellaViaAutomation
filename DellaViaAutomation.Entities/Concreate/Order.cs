@@ -11,15 +11,19 @@ namespace DellaViaAutomation.Entities.Concreate
     {
         public int Userid { get ; set ; }
         public User User { get ; set ; }
+
         public int UserAddressid { get ; set ; }
         public UserAddress UserAddress { get ; set ; }
+
         public int Statusid { get ; set ; }
         public Status Status { get ; set ; }
+
         public decimal TotalProductPrice { get ; set ; }
         public decimal TotalTaxPrice { get ; set ; }
         public decimal TotalDiscountPrice { get ; set ; }
         public decimal TotalPrice { get ; set ; }
-        public IEnumerable<OrderPayment> OrderPayments { get ; set ; }
-        public IEnumerable<OrderProduct> OrderProducts { get ; set ; }
+
+        public ICollection<OrderPayment> OrderPayments { get ; set ; }
+        public ICollection<OrderProduct> OrderProducts { get ; set ; }
     }
 }

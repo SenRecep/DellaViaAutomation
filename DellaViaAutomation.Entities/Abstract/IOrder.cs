@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Entities.Abstract
         decimal TotalDiscountPrice { get; set; }
         decimal TotalPrice { get; set; }
 
-        IEnumerable<OrderPayment> OrderPayments { get; set; }
-        IEnumerable<OrderProduct> OrderProducts { get; set; }
+        ICollection<OrderPayment> OrderPayments { get; set; }
+        ICollection<OrderProduct> OrderProducts { get; set; }
     }
 }

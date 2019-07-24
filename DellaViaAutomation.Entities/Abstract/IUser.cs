@@ -14,5 +14,6 @@ namespace DellaViaAutomation.Entities.Abstract
         string Telephone { get; set; }
         string Password { get; set; }
         bool IsAdmin { get; set; }
+        ICollection<Concreate.UserAddress> UserAddresses { get; set; }
     }
 }
