@@ -10,9 +10,6 @@ namespace DellaViaAutomation.Entities.Abstract
 {
   public interface IOrder
     {
-        int Userid { get; set; }
-        User User { get; set; }
-
         int UserAddressid { get; set; }
         UserAddress UserAddress { get; set; }
 

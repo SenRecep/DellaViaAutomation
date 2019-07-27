@@ -9,8 +9,6 @@ namespace DellaViaAutomation.Entities.Concreate
 {
     public class Order : ComplexType.EntityBase, Abstract.IOrder
     {
-        public int Userid { get ; set ; }
-        public User User { get ; set ; }
 
         public int UserAddressid { get ; set ; }
         public UserAddress UserAddress { get ; set ; }

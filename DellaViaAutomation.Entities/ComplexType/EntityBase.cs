@@ -9,10 +9,10 @@ namespace DellaViaAutomation.Entities.ComplexType
     public class EntityBase : Abstract.IEntityBase
     {
         public int id { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateDate { get; set; } = DateTime.Now;
         public int CreateUserid { get; set; }
         public DateTime? UpdateDate { get; set; }
         public int? UpdateUserid { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }
