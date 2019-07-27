@@ -22,4 +22,5 @@ namespace DellaViaAutomation.Dal.Abstract
     public interface IOrderRepository : IRepository<Order> { }
     public interface IOrderProductRepository : IRepository<OrderProduct> { }
     public interface IOrderPaymentRepository : IRepository<OrderPayment> { }
+    public interface IFoodRepository : IRepository<Food> { }
 }

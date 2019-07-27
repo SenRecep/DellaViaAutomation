@@ -28,5 +28,6 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework.Repositories
     public class OrderRepository : RepositoryBase<Order>, IOrderRepository { }
     public class OrderProductRepository : RepositoryBase<OrderProduct>, IOrderProductRepository { }
     public class OrderPaymentRepository : RepositoryBase<OrderPayment>, IOrderPaymentRepository { }
+    public class FoodRepository : RepositoryBase<Food>, IFoodRepository { }
 
 }

@@ -48,7 +48,6 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
         public virtual void Delete(T entity)
 
         {
-
             dbSet.Remove(entity);
 
         }

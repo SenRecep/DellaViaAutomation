@@ -18,19 +18,14 @@ namespace DellaViaAutomation.ConsoleUi
             // @"Data Source=DESKTOP-F562OK2\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=DellaViaAutomationDb" ifadesindeki  Catalog Kismini Database ini olusturduktan sonra ve 
             // Source kismindaki yeri duzeltmen lazim 
 
-            //User user = new User
+            //Food food = new Food
             //{
-            //    CreateUserid = 1,
-            //    Email="67rsen00@gmail.com",
-            //    FirstName="Recep",
-            //    LastName="Şen",
-            //    IsAdmin = true,
-            //    Password="Bubirsifre",
-            //    Telephone="+90 531 964 9002",
+            //    CreateUserid=1,
+            //    Name="Pizza",
             //};
-
-            //ManagerBuilder.UserManager.Add(user);
+            //ManagerBuilder.FoodManager.Add(food);
             //DataController.DbSave();
+
             Console.WriteLine("Islemler bitmistir");
             Console.ReadLine();
         }

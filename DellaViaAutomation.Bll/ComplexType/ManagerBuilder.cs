@@ -3,7 +3,6 @@ using DellaViaAutomation.Dal.Abstract.Infrastructure;
 using DellaViaAutomation.Dal.Concreate.EntityFramework.Repositories;
 using DellaViaAutomation.Entities.ComplexType;
 using DellaViaAutomation.Entities.Concreate;
-using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +23,6 @@ namespace DellaViaAutomation.Bll.ComplexType
         public static EntityManager<Order> OrderManager => new EntityManager<Order>(new OrderRepository());
         public static EntityManager<OrderProduct> OrderProductManager => new EntityManager<OrderProduct>(new OrderProductRepository());
         public static EntityManager<OrderPayment> OrderPaymentManager => new EntityManager<OrderPayment>(new OrderPaymentRepository());
+        public static EntityManager<Food> FoodManager => new EntityManager<Food>(new FoodRepository());
     }
 }
