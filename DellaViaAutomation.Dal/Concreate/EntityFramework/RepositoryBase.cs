@@ -58,6 +58,8 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
 
             IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
 
+
+
             foreach (T obj in objects)
 
                 dbSet.Remove(obj);

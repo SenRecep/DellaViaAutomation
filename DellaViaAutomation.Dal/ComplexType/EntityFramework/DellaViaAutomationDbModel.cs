@@ -29,5 +29,6 @@ namespace DellaViaAutomation.Dal.ComplexType.EntityFramework
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<OrderPayment> OrderPayments { get; set; }
         public DbSet<Food> Foods { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
     }
 }

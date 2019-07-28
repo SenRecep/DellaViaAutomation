@@ -51,6 +51,7 @@
     <Compile Include="Abstract\IPostalCode.cs" />
     <Compile Include="Abstract\IProduct.cs" />
     <Compile Include="Abstract\IStatus.cs" />
+    <Compile Include="Abstract\ITicket.cs" />
     <Compile Include="Abstract\IUser.cs" />
     <Compile Include="Abstract\IUserAddress.cs" />
     <Compile Include="Abstract\PaymentType.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Concreate\PostalCode.cs" />
     <Compile Include="Concreate\Product.cs" />
     <Compile Include="Concreate\Status.cs" />
+    <Compile Include="Concreate\Ticket.cs" />
     <Compile Include="Concreate\User.cs" />
     <Compile Include="Concreate\UserAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

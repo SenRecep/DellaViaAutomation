@@ -13,21 +13,49 @@ namespace DellaViaAutomation.ConsoleUi
         static void Main(string[] args)
         {
             Console.WriteLine("Program basladi");
-            Console.ReadLine();
-            // Calistirmadan evel DellaViaAutomation.Dal.ComplexType.EntityFramework.DellaViaAutomationDbModel in olusturucusundaki base kismindaki 
-            // @"Data Source=DESKTOP-F562OK2\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=DellaViaAutomationDb" ifadesindeki  Catalog Kismini Database ini olusturduktan sonra ve 
-            // Source kismindaki yeri duzeltmen lazim 
-
-            //Food food = new Food
+            //for (int i = 0; i < 10; i++)
             //{
-            //    CreateUserid=1,
-            //    Name="Pizza",
+            //    test();
+            //}
+
+            //Food food = new Food()
+            //{
+            //    CreateUserid = 1,
+            //    Name="Pilav"
             //};
             //ManagerBuilder.FoodManager.Add(food);
+            //ManagerBuilder.FoodManager.Delete(x=> x.Name=="Pilav");
+
+            //Ticket ticket = new Ticket()
+            //{
+            //    user = ManagerBuilder.UserManager.GetById(1),
+            //    product = null,
+            //    Message = "Hey"
+            //};
+            //ManagerBuilder.TicketManager.Add(ticket);
             //DataController.DbSave();
+
+
+            foreach (var item in ManagerBuilder.TicketManager.GetAll())
+            {
+                Console.WriteLine(item.Message);
+            }
 
             Console.WriteLine("Islemler bitmistir");
             Console.ReadLine();
+        }
+        static void test()
+        {
+            var T1 = DateTime.Now;
+            var x = ManagerBuilder.FoodManager.GetAll(); 
+            var y = ManagerBuilder.UserManager.GetAll();
+            foreach (var item in x)
+                Console.WriteLine(item.Name);
+            foreach (var item in y)
+                Console.WriteLine(item.FirstName);
+            var res = DateTime.Now -T1;
+            Console.WriteLine(res.ToString());
+
         }
 
     }

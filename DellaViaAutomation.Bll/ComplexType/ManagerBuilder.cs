@@ -24,5 +24,6 @@ namespace DellaViaAutomation.Bll.ComplexType
         public static EntityManager<OrderProduct> OrderProductManager => new EntityManager<OrderProduct>(new OrderProductRepository());
         public static EntityManager<OrderPayment> OrderPaymentManager => new EntityManager<OrderPayment>(new OrderPaymentRepository());
         public static EntityManager<Food> FoodManager => new EntityManager<Food>(new FoodRepository());
+        public static EntityManager<Ticket> TicketManager => new EntityManager<Ticket>(new TicketRepository());
     }
 }
