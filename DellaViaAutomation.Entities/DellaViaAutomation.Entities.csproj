@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IFoodandBeverage.cs" />
     <Compile Include="Abstract\IBasket.cs" />
     <Compile Include="Abstract\ICategory.cs" />
     <Compile Include="Abstract\IEntityBase.cs" />
-    <Compile Include="Abstract\IFood.cs" />
+    <Compile Include="Abstract\FoodandBeverageSize.cs" />
     <Compile Include="Abstract\IOrder.cs" />
     <Compile Include="Abstract\IOrderPayment.cs" />
     <Compile Include="Abstract\IOrderProduct.cs" />
@@ -54,13 +55,15 @@
     <Compile Include="Abstract\ITicket.cs" />
     <Compile Include="Abstract\IUser.cs" />
     <Compile Include="Abstract\IUserAddress.cs" />
+    <Compile Include="Abstract\IMenu.cs" />
     <Compile Include="Abstract\PaymentType.cs" />
     <Compile Include="ComplexType\EntityBase.cs" />
+    <Compile Include="ComplexType\FoodandBeverage.cs" />
     <Compile Include="ComplexType\OrderPayment.cs" />
     <Compile Include="ComplexType\OrderProduct.cs" />
     <Compile Include="Concreate\Basket.cs" />
     <Compile Include="Concreate\Category.cs" />
-    <Compile Include="Concreate\Food.cs" />
+    <Compile Include="Concreate\Menu.cs" />
     <Compile Include="Concreate\Order.cs" />
     <Compile Include="Concreate\PostalCode.cs" />
     <Compile Include="Concreate\Product.cs" />

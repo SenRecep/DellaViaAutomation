@@ -11,6 +11,8 @@ namespace DellaViaAutomation.Entities.Abstract
     {
         int Parentid { get; set; }
         string Name { get; set; }
+        string ImageUrl { get; set; }
+
         ICollection<Product> Products { get; set; }
     }
 }

@@ -18,6 +18,5 @@ namespace DellaViaAutomation.Entities.Abstract
         decimal Price { get; set; }
         decimal Tax { get; set; }
         decimal Discount { get; set; }
-        int IsEnable { get; set; }
     }
 }

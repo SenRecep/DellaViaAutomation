@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace DellaViaAutomation.Entities.Concreate
 {
-    public class Food:EntityBase,IFood
+    public class Menu : EntityBase, IMenu
     {
         public string Name { get; set; }
+        public string ImageUrl { get; set; }
+        public ICollection<FoodandBeverage> Products { get; set; }
     }
 }

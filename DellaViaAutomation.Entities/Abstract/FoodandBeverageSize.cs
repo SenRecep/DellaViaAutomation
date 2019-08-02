@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace DellaViaAutomation.Entities.Abstract
 {
-    public interface IFood
+    public enum FoodandBeverageSize
     {
-         string Name { get; set; }
+        XS,
+        S,
+        M,
+        L,
+        XL,
+        XXL,
     }
 }

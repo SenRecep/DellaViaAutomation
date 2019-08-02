@@ -1,8 +1,10 @@
 ﻿using DellaViaAutomation.Bll.ComplexType;
+using DellaViaAutomation.Entities.ComplexType;
 using DellaViaAutomation.Entities.Concreate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,51 +14,50 @@ namespace DellaViaAutomation.ConsoleUi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Program basladi");
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    test();
-            //}
+            print("Program basladi");
 
-            //Food food = new Food()
-            //{
-            //    CreateUserid = 1,
-            //    Name="Pilav"
-            //};
-            //ManagerBuilder.FoodManager.Add(food);
-            //ManagerBuilder.FoodManager.Delete(x=> x.Name=="Pilav");
+            //nesne_ozellikleri();
 
-            //Ticket ticket = new Ticket()
-            //{
-            //    user = ManagerBuilder.UserManager.GetById(1),
-            //    product = null,
-            //    Message = "Hey"
-            //};
-            //ManagerBuilder.TicketManager.Add(ticket);
-            //DataController.DbSave();
-
-
-            foreach (var item in ManagerBuilder.TicketManager.GetAll())
-            {
-                Console.WriteLine(item.Message);
-            }
-
-            Console.WriteLine("Islemler bitmistir");
+            print("Islemler bitmistir");
             Console.ReadLine();
         }
-        static void test()
+        static void nesne_ozellikleri()
         {
             var T1 = DateTime.Now;
-            var x = ManagerBuilder.FoodManager.GetAll(); 
-            var y = ManagerBuilder.UserManager.GetAll();
-            foreach (var item in x)
-                Console.WriteLine(item.Name);
-            foreach (var item in y)
-                Console.WriteLine(item.FirstName);
-            var res = DateTime.Now -T1;
-            Console.WriteLine(res.ToString());
+            Type[] types = new Type[] {
+                typeof(Basket),
+                typeof(Category),
+                typeof(Order),
+                typeof(PostalCode),
+                typeof(Product),
+                typeof(Status),
+                typeof(Ticket),
+                typeof(User),
+                typeof(UserAddress),
+            };
+
+            foreach (var type in types)
+            {
+                print("");
+                print(type.Name + " {");
+                PropertyInfo[] propertyInfos = type.GetProperties();
+                foreach (var property in propertyInfos)
+                {
+                    print($"  ({property.PropertyType.Name}) {property.Name}");
+                }
+                print("}");
+                print("");
+            }
+
+            var res = DateTime.Now - T1;
+            print(res.ToString());
 
         }
-
+        public static void print(string str)
+        {
+            str = str.Insert(0, "  ");
+            Console.WriteLine(str);
+            //System.Diagnostics.Debug.WriteLine(str);
+        }
     }
 }
