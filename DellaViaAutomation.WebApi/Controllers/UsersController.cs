@@ -12,9 +12,9 @@ namespace DellaViaAutomation.WebApi.Controllers
     // Daha Tamamlanmadı
     public class UsersController : ApiController
     {
-        public IEnumerable<User> Get()
+        public List<User> Get()
         {
-            return ManagerBuilder.UserManager.GetAll();
+            return ManagerBuilder.UserManager.GetAll().ToList();
         }
 
         // GET api/values/5

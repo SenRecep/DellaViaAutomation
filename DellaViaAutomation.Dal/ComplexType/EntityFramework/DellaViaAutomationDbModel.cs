@@ -12,7 +12,7 @@ namespace DellaViaAutomation.Dal.ComplexType.EntityFramework
     {
 
         public DellaViaAutomationDbModel()
-            : base(@"Data Source=DESKTOP-F562OK2\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=DellaViaAutomationDb")
+            : base(@"Data Source=.;Integrated Security=SSPI;Initial Catalog=DellaViaAutomationDb")
         {
             var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
             if (type == null)

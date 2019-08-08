@@ -16,7 +16,8 @@ namespace DellaViaAutomation.ConsoleUi
         {
             print("Program basladi");
 
-            //nesne_ozellikleri();
+           
+            nesne_ozellikleri();
 
             print("Islemler bitmistir");
             Console.ReadLine();
@@ -34,6 +35,8 @@ namespace DellaViaAutomation.ConsoleUi
                 typeof(Ticket),
                 typeof(User),
                 typeof(UserAddress),
+                typeof(Menu),
+                typeof(FoodandBeverage),
             };
 
             foreach (var type in types)
@@ -57,7 +60,7 @@ namespace DellaViaAutomation.ConsoleUi
         {
             str = str.Insert(0, "  ");
             Console.WriteLine(str);
-            //System.Diagnostics.Debug.WriteLine(str);
+            System.Diagnostics.Debug.WriteLine(str);
         }
     }
 }
