@@ -12,6 +12,8 @@ namespace DellaViaAutomation.Entities.Abstract
     {
         string Name { get; set; }
         string ImageUrl { get; set; }
+        int MenuCategoryid { get; set; }
+        Menu MenuCategory { get; set; }
         ICollection<FoodandBeverage> Products { get; set; }
     }
 }

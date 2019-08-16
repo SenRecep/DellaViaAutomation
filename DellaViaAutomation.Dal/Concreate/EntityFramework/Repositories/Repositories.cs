@@ -31,5 +31,6 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework.Repositories
     public class TicketRepository : RepositoryBase<Ticket>, ITicketRepository { }
     public class FoodandBeverageRepository : RepositoryBase<FoodandBeverage>, IFoodandBeverageRepository { }
     public class MenuRepository : RepositoryBase<Menu>, IMenuRepository { }
+    public class MenuCategoryRepository : RepositoryBase<MenuCategory>, IMenuCategoryRepository { }
 
 }

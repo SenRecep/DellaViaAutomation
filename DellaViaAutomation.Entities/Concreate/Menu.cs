@@ -12,6 +12,10 @@ namespace DellaViaAutomation.Entities.Concreate
     {
         public string Name { get; set; }
         public string ImageUrl { get; set; }
+
+        public int MenuCategoryid { get; set; }
+        public Menu MenuCategory { get; set; }
+
         public ICollection<FoodandBeverage> Products { get; set; }
     }
 }

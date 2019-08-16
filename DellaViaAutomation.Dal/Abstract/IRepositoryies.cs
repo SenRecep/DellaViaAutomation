@@ -25,4 +25,5 @@ namespace DellaViaAutomation.Dal.Abstract
     public interface ITicketRepository : IRepository<Ticket> { }
     public interface IFoodandBeverageRepository : IRepository<FoodandBeverage> { }
     public interface IMenuRepository : IRepository<Menu> { }
+    public interface IMenuCategoryRepository : IRepository<MenuCategory> { }
 }

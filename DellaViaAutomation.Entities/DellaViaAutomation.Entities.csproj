@@ -46,6 +46,7 @@
     <Compile Include="Abstract\ICategory.cs" />
     <Compile Include="Abstract\IEntityBase.cs" />
     <Compile Include="Abstract\FoodandBeverageSize.cs" />
+    <Compile Include="Abstract\IMenuCategory.cs" />
     <Compile Include="Abstract\IOrder.cs" />
     <Compile Include="Abstract\IOrderPayment.cs" />
     <Compile Include="Abstract\IOrderProduct.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Abstract\PaymentType.cs" />
     <Compile Include="ComplexType\EntityBase.cs" />
     <Compile Include="ComplexType\FoodandBeverage.cs" />
+    <Compile Include="ComplexType\MenuCategory.cs" />
     <Compile Include="ComplexType\OrderPayment.cs" />
     <Compile Include="ComplexType\OrderProduct.cs" />
     <Compile Include="Concreate\Basket.cs" />

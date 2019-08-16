@@ -11,6 +11,7 @@ namespace DellaViaAutomation.WebApiAndUi.Controllers
         public ActionResult Index()
         {
             ViewBag.FullName = DellaViaAutomation.Bll.ComplexType.ManagerBuilder.UserManager.GetById(1).GetFullName;
+            ViewBag.CompanyName = DellaViaAutomation.Bll.Concreate.Company.Name;
             return View();
         }
     }

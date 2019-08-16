@@ -8,7 +8,7 @@ namespace DellaViaAutomation.Entities.Abstract
 {
   public interface IPostalCode
     {
-        int PostalCode { get; set; }
+        int Code { get; set; }
         string City { get; set; }
     }
 }

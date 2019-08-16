@@ -10,6 +10,6 @@ namespace DellaViaAutomation.Entities.Concreate
     public class PostalCode : ComplexType.EntityBase, Abstract.IPostalCode
     {
         public string City { get; set; }
-        int IPostalCode.PostalCode { get; set; }
+        public int Code { get; set; }
     }
 }

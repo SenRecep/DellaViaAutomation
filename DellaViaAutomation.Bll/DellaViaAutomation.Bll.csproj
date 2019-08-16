@@ -44,6 +44,7 @@
     <Compile Include="ComplexType\ClassDataTransfer.cs" />
     <Compile Include="ComplexType\DataController.cs" />
     <Compile Include="ComplexType\ManagerBuilder.cs" />
+    <Compile Include="Concreate\Company.cs" />
     <Compile Include="Concreate\EntityManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
