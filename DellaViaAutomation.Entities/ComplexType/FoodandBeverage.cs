@@ -11,5 +11,6 @@ namespace DellaViaAutomation.Entities.ComplexType
     public class FoodandBeverage :Product, IFoodandBeverage
     {
         public FoodandBeverageSize FoodandBeverageSize { get; set; }
+        public ICollection<FoodandBeverage> Products { get; set; }
     }
 }

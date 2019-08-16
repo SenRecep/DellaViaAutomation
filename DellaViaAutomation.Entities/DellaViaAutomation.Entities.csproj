@@ -41,9 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IExtraBurgerItem.cs" />
-    <Compile Include="Concreate\ExtraBurgerItems.cs" />
-    <Compile Include="Abstract\IBurger.cs" />
     <Compile Include="Abstract\IFoodandBeverage.cs" />
     <Compile Include="Abstract\IBasket.cs" />
     <Compile Include="Abstract\ICategory.cs" />
@@ -52,12 +49,10 @@
     <Compile Include="Abstract\IOrder.cs" />
     <Compile Include="Abstract\IOrderPayment.cs" />
     <Compile Include="Abstract\IOrderProduct.cs" />
-    <Compile Include="Abstract\IPizzaItems.cs" />
     <Compile Include="Abstract\IPostalCode.cs" />
     <Compile Include="Abstract\IProduct.cs" />
     <Compile Include="Abstract\IStatus.cs" />
     <Compile Include="Abstract\ITicket.cs" />
-    <Compile Include="Abstract\IToppings.cs" />
     <Compile Include="Abstract\IUser.cs" />
     <Compile Include="Abstract\IUserAddress.cs" />
     <Compile Include="Abstract\IMenu.cs" />
@@ -67,16 +62,13 @@
     <Compile Include="ComplexType\OrderPayment.cs" />
     <Compile Include="ComplexType\OrderProduct.cs" />
     <Compile Include="Concreate\Basket.cs" />
-    <Compile Include="Concreate\Burger.cs" />
     <Compile Include="Concreate\Category.cs" />
     <Compile Include="Concreate\Menu.cs" />
     <Compile Include="Concreate\Order.cs" />
-    <Compile Include="Concreate\PizzaItems.cs" />
     <Compile Include="Concreate\PostalCode.cs" />
     <Compile Include="Concreate\Product.cs" />
     <Compile Include="Concreate\Status.cs" />
     <Compile Include="Concreate\Ticket.cs" />
-    <Compile Include="Concreate\Toppings.cs" />
     <Compile Include="Concreate\User.cs" />
     <Compile Include="Concreate\UserAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

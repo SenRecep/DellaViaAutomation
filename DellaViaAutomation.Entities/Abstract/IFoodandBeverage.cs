@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 namespace DellaViaAutomation.Entities.Abstract
 {
+    using Entities.ComplexType;
     public interface IFoodandBeverage
     {
-         FoodandBeverageSize FoodandBeverageSize { get; set; }
+        FoodandBeverageSize FoodandBeverageSize { get; set; }
+        ICollection<FoodandBeverage> Products { get; set; }
     }
 }
