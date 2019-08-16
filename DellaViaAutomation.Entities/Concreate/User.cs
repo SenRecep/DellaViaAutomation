@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DellaViaAutomation.Entities.Concreate
 {
-    public class User : ComplexType.EntityBase, Abstract.IUser
+    public partial class User : ComplexType.EntityBase, Abstract.IUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -15,5 +15,9 @@ namespace DellaViaAutomation.Entities.Concreate
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
         public virtual ICollection<UserAddress> UserAddresses { get; set; }
+    }
+    public partial class User
+    {
+        public string GetFullName { get { return $"{FirstName} {LastName}"; } }
     }
 }
