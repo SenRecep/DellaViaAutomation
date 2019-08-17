@@ -12,7 +12,7 @@ namespace DellaViaAutomation.Dal.ComplexType.EntityFramework
     {
 
         public DellaViaAutomationDbModel()
-            : base(@"Data Source=.;Integrated Security=SSPI;Initial Catalog=DellaViaAutomationDb")
+            : base(@"Data Source=DESKTOP-F562OK2\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=DellaViaAutomationDb")
         {
             var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
             if (type == null)
@@ -29,5 +29,8 @@ namespace DellaViaAutomation.Dal.ComplexType.EntityFramework
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<OrderPayment> OrderPayments { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<FoodandBeverage> FoodandBeverages { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<MenuCategory> MenuCategories { get; set; }
     }
 }

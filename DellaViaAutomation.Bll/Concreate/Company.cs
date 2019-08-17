@@ -19,10 +19,10 @@ namespace DellaViaAutomation.Bll.Concreate
                  Code= 4600,
             },
         };
-        private static DateTime DateTimeNow { get; set; } = DateTime.Now;
-        public static DateTime FirstOpenTime { get; set; } = new DateTime(DateTimeNow.Year, DateTimeNow.Month, DateTimeNow.Day,11,0,0);
-        public static DateTime FirstCloseTime { get; set; } = new DateTime(DateTimeNow.Year, DateTimeNow.Month, DateTimeNow.Day, 21, 0, 0);
-        public static DateTime SecondCloseTime { get; set; } = new DateTime(DateTimeNow.Year, DateTimeNow.Month, DateTimeNow.Day, 22, 0, 0);
+
+        public static TimeSpan  FirstOpenTime { get; set; } = new TimeSpan(0, 11, 0, 0);
+        public static TimeSpan FirstCloseTime { get; set; } = new TimeSpan(0, 21, 0, 0);
+        public static TimeSpan SecondCloseTime { get; set; } = new TimeSpan(0, 22, 0, 0);
         public static DayOfWeek[] DayOfWeeks { get; set; } = { DayOfWeek.Friday, DayOfWeek.Saturday };
     }
 }

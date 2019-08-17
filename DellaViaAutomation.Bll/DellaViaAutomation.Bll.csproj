@@ -46,6 +46,7 @@
     <Compile Include="ComplexType\ManagerBuilder.cs" />
     <Compile Include="Concreate\Company.cs" />
     <Compile Include="Concreate\EntityManager.cs" />
+    <Compile Include="Concreate\ToPasswordRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
