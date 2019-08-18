@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +47,7 @@
     <Compile Include="ComplexType\ClassDataTransfer.cs" />
     <Compile Include="ComplexType\DataController.cs" />
     <Compile Include="ComplexType\ManagerBuilder.cs" />
+    <Compile Include="Concreate\ApiCenter.cs" />
     <Compile Include="Concreate\Company.cs" />
     <Compile Include="Concreate\EntityManager.cs" />
     <Compile Include="Concreate\ToPasswordRepository.cs" />
@@ -65,6 +69,9 @@
       <Project>{a8d7bab6-6010-496d-817e-890af9454faf}</Project>
       <Name>DellaViaAutomation.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -60,6 +60,7 @@
     <Compile Include="Abstract\PaymentType.cs" />
     <Compile Include="ComplexType\EntityBase.cs" />
     <Compile Include="ComplexType\FoodandBeverage.cs" />
+    <Compile Include="ComplexType\Helpers.cs" />
     <Compile Include="ComplexType\MenuCategory.cs" />
     <Compile Include="ComplexType\OrderPayment.cs" />
     <Compile Include="ComplexType\OrderProduct.cs" />

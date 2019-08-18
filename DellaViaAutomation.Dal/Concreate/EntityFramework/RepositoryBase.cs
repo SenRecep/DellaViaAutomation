@@ -12,7 +12,7 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
     using System.Data.Entity;
     using System.Linq.Expressions;
 
-    public  abstract  class RepositoryBase<T> where T : EntityBase
+    public abstract class RepositoryBase<T> where T : EntityBase
     {
 
         #region Properties
@@ -64,6 +64,11 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
 
                 dbSet.Remove(obj);
 
+        }
+
+        public bool Exists(T entity)
+        {
+            return dbSet.Any<T>(x => x == entity);
         }
 
         public virtual T GetById(long id, params string[] navigations)

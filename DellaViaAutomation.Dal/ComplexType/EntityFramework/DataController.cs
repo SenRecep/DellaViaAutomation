@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DellaViaAutomation.Entities.ComplexType;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,10 @@ namespace DellaViaAutomation.Dal.ComplexType.EntityFramework
                 DbBuild();
             result = Db.SaveChanges();
             System.Diagnostics.Debug.WriteLine("Db.SaveChanges() Rt : " + result);
+        }
+        public static object GetTable<T>() where T:EntityBase
+        {
+            return getDb().Set<T>();
         }
     }
 }

@@ -32,6 +32,11 @@ namespace DellaViaAutomation.Bll.Concreate
             _.Delete(where);
         }
 
+        public bool Exists(T entity)
+        {
+           return _.Exists(entity);
+        }
+
         public T Get(Expression<Func<T, bool>> where, params string[] navigations)
         {
             return _.Get(where, navigations);

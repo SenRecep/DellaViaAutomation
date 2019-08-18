@@ -1,18 +1,8 @@
-﻿@using DellaViaAutomation.Entities.Concreate
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 
 <button id="btnClick">Get Users</button>
-
-<br />
-<input type="text" id="txtname" placeholder="Ad" />
-<br />
-<input type="password" id="txtpassword" placeholder="Parola" />
-<br />
-<button id="btnlogin">Giris Yap</button> | <button id="btnlogout">Cikis Yap</button>
-<br />
-<label id="lblresult"></label>
 
 @section scripts{
     <script type="text/javascript">
@@ -28,7 +18,7 @@
                     return;
                 }
                 $.ajax({
-                    url: "https://localhost:44396/api/Home/GetUsers",
+                    url: "https://localhost:44396/api/Users/Get",
                     type: "GET",
                     crossDomain: true,
                     dataType: "json",
@@ -41,40 +31,5 @@
                     }
                 });
             });
-
-
-            $("#btnlogin").click(function () {
-
-                var username = $("#txtname").val();
-                var password = $("#txtpassword").val();
-
-                $.ajax({
-                    url: "https://localhost:44396/token",
-                    type: "POST",
-                    crossDomain: true,
-                    data: { "username": username, "password": password, "grant_type": "password" },
-                    dataType: "json",
-                    success: function (result) {
-                        localStorage.setItem("token", JSON.stringify(result));
-                        $("#lblresult").text(JSON.stringify(result));
-                    },
-                    error: function (xhr, status, error) {
-                        alert("err - " + status + " - " + error);
-                    }
-                });
-            });
-
-            $("#btnlogout").click(function () {
-
-                if (localStorage.getItem("token") != null) {
-                    localStorage.removeItem("token");
-                    $("#lblresult").text("Cikis yaptiniz");
-                }
-                else {
-                    alert("zaten giris yapmamissiniz");
-                }
-
-            });
-        });
     </script>
 }

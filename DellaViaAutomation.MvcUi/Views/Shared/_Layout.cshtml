@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    <link href="~/Content/_LayoutStyle.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/font-awesome")
 
 </head>
 <body>
 
-    <div class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+    <div id="mainnavbar" class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
         <div class="container">
             @Html.ActionLink(nameof(DellaViaAutomation), "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">&#x2630;</button>
@@ -22,16 +23,23 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - DellaVia</p>
-        </footer>
     </div>
+    <footer >
+        <div class="container">
+            <p>&copy; @DateTime.Now.Year - DellaVia</p>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(function () {
+            var navbarheight = $("#mainnavbar").height() + 25;
+            $("body").css("padding-top", navbarheight + "px");
+        });
+    </script>
 </body>
 </html>

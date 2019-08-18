@@ -20,6 +20,7 @@ namespace DellaViaAutomation.Dal.Abstract.Infrastructure
         T GetById(long id, params string[] navigations);
 
         T Get(Expression<Func<T, bool>> where, params string[] navigations);
+        bool Exists(T entity);
 
         IEnumerable<T> GetAll(params string[] navigations);
 

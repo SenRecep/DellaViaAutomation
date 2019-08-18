@@ -25,20 +25,7 @@ namespace DellaViaAutomation.ConsoleUi
         static void nesne_ozellikleri()
         {
             var T1 = DateTime.Now;
-            Type[] types = new Type[] {
-                typeof(Basket),
-                typeof(Category),
-                typeof(Order),
-                typeof(PostalCode),
-                typeof(Product),
-                typeof(Status),
-                typeof(Ticket),
-                typeof(User),
-                typeof(UserAddress),
-                typeof(Menu),
-                typeof(FoodandBeverage),
-            };
-
+            Type[] types = Helpers.GetTypes();
             foreach (var type in types)
             {
                 print("");

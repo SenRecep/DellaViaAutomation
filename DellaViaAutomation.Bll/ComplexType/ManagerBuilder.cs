@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace DellaViaAutomation.Bll.ComplexType
 {
-    public static class ManagerBuilder
+    public static class ManagerBuilder 
     {
-        public static EntityManager<User> UserManager => new EntityManager<User>(new UserRepository());
+        public static EntityManager<User> UserManager  => new EntityManager<User>(new UserRepository());
         public static EntityManager<PostalCode> PostalCodeManager => new EntityManager<PostalCode>(new PostalCodeRepository());
         public static EntityManager<UserAddress> UserAddressManager => new EntityManager<UserAddress>(new UserAddressRepository());
         public static EntityManager<Status> StatusManager => new EntityManager<Status>(new StatusRepository());
