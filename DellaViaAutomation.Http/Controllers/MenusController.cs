@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var Menu = ManagerBuilder.MenuManager.GetById(id);
             if (Menu == null)
                 return NotFound();
-            return Ok();
+            return Ok(Menu);
         }
 
         // POST: api/Menu

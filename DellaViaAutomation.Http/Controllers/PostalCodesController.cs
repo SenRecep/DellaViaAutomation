@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var PostalCode = ManagerBuilder.PostalCodeManager.GetById(id);
             if (PostalCode == null)
                 return NotFound();
-            return Ok();
+            return Ok(PostalCode);
         }
 
         // POST: api/PostalCode

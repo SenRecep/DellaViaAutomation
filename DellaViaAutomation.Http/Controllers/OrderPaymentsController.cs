@@ -25,7 +25,7 @@ namespace DellaViaAutomation.Http.Controllers
             var OrderPayment = ManagerBuilder.OrderPaymentManager.GetById(id);
             if (OrderPayment == null)
                 return NotFound();
-            return Ok();
+            return Ok(OrderPayment);
         }
 
         // POST: api/OrderPayment

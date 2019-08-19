@@ -1,139 +1,68 @@
 ﻿using DellaViaAutomation.Entities.ComplexType;
-using Newtonsoft.Json;
+using DellaViaAutomation.Entities.Concreate;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Net;
 using System.Net.Http;
-using System.Text;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace DellaViaAutomation.Bll.Concreate
 {
-    public static class ApiCenter<T> where T : EntityBase
+    public static class ApiCenter<T> where T : class
     {
-
         static ApiCenter()
         {
-            uri = $"https://localhost:44396/api/{typeof(T).Name}";
+            client.BaseAddress = new Uri("https://localhost:44396/api/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
         }
-        static string uri;
-
-        public static async Task<dynamic> GetAsync()
+        public static HttpClient client = new HttpClient();
+        public static async Task<Uri> CreateAsync(T T,string controller)
         {
+            HttpResponseMessage response = await client.PostAsJsonAsync(
+                controller, T);
+            response.EnsureSuccessStatusCode();
 
-            using (HttpClient httpClient = new HttpClient())
-            {
-                return JsonConvert.DeserializeObject<dynamic>(
-                await httpClient.GetStringAsync(uri)
-                );
-            }
-        }
-
-        public static async Task<dynamic> PostAsync(T Ts)
-        {
-
-            using (HttpClient httpClient = new HttpClient())
-            {
-                httpClient.BaseAddress = new Uri(uri);
-                StringContent content = new StringContent(JsonConvert.SerializeObject(Ts), Encoding.UTF8, "application / json");
-                HttpResponseMessage response = await httpClient.PostAsync("", content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string data = await response.Content.ReadAsStringAsync();
-                    Ts = JsonConvert.DeserializeObject<T>(data);
-                }
-            }
-            return Ts;
+            return response.Headers.Location;
         }
 
-        public static async Task<dynamic> PutAsync(string id, T Ts)
+        public static async Task<T> GetAsync(string controller)
         {
-
-            using (HttpClient httpClient = new HttpClient())
+            HttpResponseMessage response = await client.GetAsync(controller);
+            if (response.IsSuccessStatusCode)
             {
-                httpClient.BaseAddress = new Uri(uri);
-                StringContent content = new StringContent(JsonConvert.SerializeObject(Ts), Encoding.UTF8, "application / json");
-                HttpResponseMessage response = await httpClient.PutAsync($"{id}", content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string data = await response.Content.ReadAsStringAsync();
-                    Ts = JsonConvert.DeserializeObject<T>(data);
-                }
+               return await response.Content.ReadAsAsync<T>();
             }
-            return Ts;
-        }
-
-        public static async Task<dynamic> DeleteAsycn(string id)
-        {
-            using (HttpClient httpClient = new HttpClient())
-            {
-                httpClient.BaseAddress = new Uri(uri);
-                //StringContent content = new StringContent(JsonConvert.SerializeObject(Ts), Encoding.UTF8, "application/json");
-                var response = await httpClient.DeleteAsync($"{id}");
-
-                if (response.IsSuccessStatusCode)
-                {
-
-                }
-            }
-
             return null;
         }
 
+        public static async Task<User> AdminLogin(string email,string pass)
+        {
+            HttpResponseMessage response = await client.GetAsync($"AdminLoginValidate/{email}/{pass}");
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<User>();
+            }
+            return null;
+        }
 
+        public static async Task<T> UpdateAsync(T T, string controller)
+        {
+            HttpResponseMessage response = await client.PutAsJsonAsync(
+                $"{controller}/{(T as EntityBase).id}", T);
+            response.EnsureSuccessStatusCode();
 
-        //public void method()
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("http://localhost:3376/");
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        HttpResponseMessage response;
-        //        response = client.GetAsync("api/OgrenciApi").Result;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            var ogrenciler = response.Content.ReadAsAsync<IEnumerable<Ogrenci>>().Result;
-        //            foreach (var ogrenci in ogrenciler)
-        //            {
-        //                Console.WriteLine("Ogrenci ID : {0} - Öğrencinin Adı: {1}- Soyadı : {2} - Bölümü : {3} - Fakültesi : {4}", ogrenci.Id, ogrenci.Adi, ogrenci.Soyadi, ogrenci.BolumAdi, ogrenci.FakulteAdi);
-        //            }
+            T = await response.Content.ReadAsAsync<T>();
+            return T;
+        }
 
-
-
-        //        }
-        //        Console.ReadKey();
-
-
-        //    }
-        //}
-
-        //public async Task<ActionResult> pagename()
-        //{
-
-        //    //Veritabanındaki olan Car listesini çağırmak için;
-        //    ViewResult v = View("index", await ApiCenter<User>.GetAsync());
-
-        //    //Kaydetme Methodunu çağırmak için;
-
-        //    User c = new User();
-        //    c.FirstName = "tugsfba";
-        //    c.IsAdmin = true;
-        //    v = View("index", await ApiCenter<User>.PostAsync(c));
-
-        //    //Update Methodunu çağırmak için;
-
-        //    c.FirstName = "Adım değişti";
-        //    c.IsAdmin = false;
-        //    v = View("index", await ApiCenter<User>.PutAsync("id", c));
-
-
-        //    //Silme Methodunu çağırmak için;
-
-        //    v = View("index", await ApiCenter<User>.DeleteAsycn("id"));
-
-        //    return v;
-        //}
+        public static async Task<HttpStatusCode> DeleteAsync(string id,string controller)
+        {
+            HttpResponseMessage response = await client.DeleteAsync(
+                $"{controller}/{id}");
+            return response.StatusCode;
+        }
     }
 }

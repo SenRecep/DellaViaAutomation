@@ -16,22 +16,33 @@ namespace DellaViaAutomation.Http.Controllers
     public class UsersController : BaseController
     {
         // GET: api/User
-        // GET: api/User/Get
-        [HttpGet, ResponseType(typeof(IEnumerable<User>))]
+        [HttpGet, ResponseType(typeof(ICollection<User>))]
         public IHttpActionResult Get()
         {
-            return Ok(ManagerBuilder.UserManager.GetAll());
+            var users = ManagerBuilder.UserManager.GetAll();
+            return Ok(users);
         }
 
-        // GET: api/User/5
+        // GET: api/Users/5
         [HttpGet, ResponseType(typeof(User))]
         public IHttpActionResult Get(int id)
         {
             var user = ManagerBuilder.UserManager.GetById(id);
             if (user == null)
                 return NotFound();
-            return Ok();
+            return Ok(user);
         }
+
+        [HttpGet, ResponseType(typeof(User)),Route("AdminLoginValidate/{email}/{pass}")]
+        public IHttpActionResult Get(string email,string pass)
+        {
+            User user = ManagerBuilder.UserManager.GetAll().FirstOrDefault(x=> x.IsActive==true && x.IsAdmin==true && x.Email==email && x.Password==pass);
+            if (user!=null)
+                return Ok(user);
+            else
+                return NotFound();
+        }
+
 
         // POST: api/User
         [HttpPost, ResponseType(typeof(User))]

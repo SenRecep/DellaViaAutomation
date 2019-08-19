@@ -25,7 +25,7 @@ namespace DellaViaAutomation.Http.Controllers
             var OrderProduct = ManagerBuilder.OrderProductManager.GetById(id);
             if (OrderProduct == null)
                 return NotFound();
-            return Ok();
+            return Ok(OrderProduct);
         }
 
         // POST: api/OrderProduct

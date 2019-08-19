@@ -85,7 +85,7 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
 
         }
 
-        public virtual IEnumerable<T> GetAll(params string[] navigations)
+        public virtual ICollection<T> GetAll(params string[] navigations)
 
         {
 
@@ -95,7 +95,7 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
 
                 set = set.Include(nav);
 
-            return set.AsEnumerable();
+            return set.AsEnumerable().ToList();
 
         }
 

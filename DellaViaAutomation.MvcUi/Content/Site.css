@@ -1,1 +1,84 @@
-﻿
+﻿.login-div {
+    text-align: center;
+}
+
+    .login-div .field {
+        position: relative;
+        width: 100%;
+    }
+
+        .login-div .field label::before {
+            content: attr(title);
+            position: absolute;
+            top: 0;
+            left: 15px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #777;
+            transition: 300ms all;
+        }
+
+        .login-div .field input {
+            width: 100%;
+            line-height: 40px;
+            padding: 0 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #222;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+            .login-div .field input:focus {
+                outline: 0;
+                border-color: blue;
+            }
+
+            .login-div .field input:valid + label::before {
+                line-height: 20px;
+                font-size: 12px;
+                top: -10px;
+                background: #fff;
+                color: blue;
+                padding: 0 6px;
+                left: 9px;
+                content: attr(data-title)
+            }
+
+            .login-div .field input:focus + label::before {
+                line-height: 20px;
+                font-size: 12px;
+                top: -10px;
+                background: #fff;
+                color: blue;
+                padding: 0 6px;
+                left: 9px;
+            }
+
+    .login-div button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .login-div button :hover {
+            opacity: 0.8;
+        }
+
+.box {
+    width: 70%;
+    min-width: 325px;
+    max-width: 500px;
+    background: #FFF;
+    margin: 70px auto;
+    padding: 25px;
+}
+
+
+.effect1 {
+    box-shadow: 0px 0px 8px 0px rgba(87,86,87,1);
+}

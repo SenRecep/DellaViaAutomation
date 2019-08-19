@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var Status = ManagerBuilder.StatusManager.GetById(id);
             if (Status == null)
                 return NotFound();
-            return Ok();
+            return Ok(Status);
         }
 
         // POST: api/Status

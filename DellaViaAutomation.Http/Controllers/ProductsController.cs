@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var Product = ManagerBuilder.ProductManager.GetById(id);
             if (Product == null)
                 return NotFound();
-            return Ok();
+            return Ok(Product);
         }
 
         // POST: api/Product

@@ -2,27 +2,18 @@
     ViewBag.Title = "Home Page";
 }
 
-<button id="btnClick">Get Users</button>
+<button id="btnClick">Get Users <i class="fas fa-book"></i></button>
 
 @section scripts{
     <script type="text/javascript">
         $(function () {
             $("#btnClick").click(function () {
-
-                var token = $.parseJSON(localStorage.getItem("token"));
-                if (token != null) {
-                    var accesstoken = token.access_token;
-                }
-                else {
-                    alert("Giris yapiniz");
-                    return;
-                }
                 $.ajax({
-                    url: "https://localhost:44396/api/Users/Get",
+                    url: "https://localhost:44396/api/Users",
                     type: "GET",
                     crossDomain: true,
                     dataType: "json",
-                    headers: { "accept": "application/json", "content-type": "application/json", "authorization": "Bearer " +accesstoken },
+                    headers: { "accept": "application/json", "content-type": "application/json" },
                     success: function (result) {
                         alert(JSON.stringify(result));
                     },
@@ -31,5 +22,7 @@
                     }
                 });
             });
+        });
+
     </script>
 }

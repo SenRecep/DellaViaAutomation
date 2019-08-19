@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var Ticket = ManagerBuilder.TicketManager.GetById(id);
             if (Ticket == null)
                 return NotFound();
-            return Ok();
+            return Ok(Ticket);
         }
 
         // POST: api/Ticket

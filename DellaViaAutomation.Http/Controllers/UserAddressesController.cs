@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var UserAddress = ManagerBuilder.UserAddressManager.GetById(id);
             if (UserAddress == null)
                 return NotFound();
-            return Ok();
+            return Ok(UserAddress);
         }
 
         // POST: api/UserAddress

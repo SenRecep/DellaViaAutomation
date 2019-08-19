@@ -22,7 +22,7 @@ namespace DellaViaAutomation.Dal.Abstract.Infrastructure
         T Get(Expression<Func<T, bool>> where, params string[] navigations);
         bool Exists(T entity);
 
-        IEnumerable<T> GetAll(params string[] navigations);
+        ICollection<T> GetAll(params string[] navigations);
 
         IEnumerable<T> GetMany(Expression<Func<T, bool>> where, params string[] navigations);
 

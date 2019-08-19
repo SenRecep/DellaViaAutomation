@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<form method="post">
+    <div class="container login-div box effect1">
+        <h3>Admin Giriş Sayfasi</h3>
+        @{
+            if (ViewBag.AdminLoginStatus == 1)
+            {
+                <div  class="alert alert-danger">
+                    <strong>Uyarı!</strong> Lütfen gerekli alanlari doldurunuz!
+                </div>
+            }
+            else if (ViewBag.AdminLoginStatus == 2)
+            {
+                <div  class="alert alert-danger">
+                    <strong>Hatali Giriş!</strong> Email ve parolanizi lütfen kontrol ediniz.
+                </div>
+            }
+        }
+
+        <div class="field">
+            <input type="email" required autocomplete="off" name="email" id="email" value="">
+            <label for="email" title="Email adresinizi girin" data-title="Email adresiniz"></label>
+        </div>
+
+        <div class="field">
+            <input type="password" required autocomplete="off" name="pass" id="password">
+            <label for="password" title="Şifrenizi girin" data-title="Şifre"></label>
+        </div>
+
+        <button type="submit">Giris Yap</button>
+    </div>
+</form>
+
+
+

@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var Basket = ManagerBuilder.BasketManager.GetById(id);
             if (Basket == null)
                 return NotFound();
-            return Ok();
+            return Ok(Basket);
         }
 
         // POST: api/Basket

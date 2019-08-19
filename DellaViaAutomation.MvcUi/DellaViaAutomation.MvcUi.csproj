@@ -120,6 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\AdminControllerBase.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminLoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +171,11 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLogin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -214,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -233,10 +243,6 @@
     <ProjectReference Include="..\DellaViaAutomation.Entities\DellaViaAutomation.Entities.csproj">
       <Project>{3ef1b7f1-965c-4713-a5a4-0d43a1a6be53}</Project>
       <Name>DellaViaAutomation.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DellaViaAutomation.Http\DellaViaAutomation.Http.csproj">
-      <Project>{86d8b35d-56ba-453d-91b4-b0750ccf36d5}</Project>
-      <Name>DellaViaAutomation.Http</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

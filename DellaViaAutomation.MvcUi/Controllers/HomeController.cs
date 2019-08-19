@@ -1,4 +1,5 @@
-﻿using DellaViaAutomation.Bll.Concreate;
+﻿using DellaViaAutomation.Bll.ComplexType;
+using DellaViaAutomation.Bll.Concreate;
 using DellaViaAutomation.Entities.Concreate;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,9 @@ namespace DellaViaAutomation.MvcUi.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var data = await ApiCenter<User>.GetAsync();
-            return View("Index", data);
+            return View();
         }
 
         public ActionResult About()

@@ -24,7 +24,7 @@ namespace DellaViaAutomation.Http.Controllers
             var Category = ManagerBuilder.CategoryManager.GetById(id);
             if (Category == null)
                 return NotFound();
-            return Ok();
+            return Ok(Category);
         }
 
         // POST: api/Category

@@ -25,7 +25,7 @@ namespace DellaViaAutomation.Http.Controllers
             var FoodandBeverage = ManagerBuilder.FoodandBeverageManager.GetById(id);
             if (FoodandBeverage == null)
                 return NotFound();
-            return Ok();
+            return Ok(FoodandBeverage);
         }
 
         // POST: api/FoodandBeverage

@@ -42,7 +42,7 @@ namespace DellaViaAutomation.Bll.Concreate
             return _.Get(where, navigations);
         }
 
-        public IEnumerable<T> GetAll(params string[] navigations)
+        public ICollection<T> GetAll(params string[] navigations)
         {
             return _.GetAll(navigations);
         }
