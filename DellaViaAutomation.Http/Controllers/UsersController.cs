@@ -33,7 +33,7 @@ namespace DellaViaAutomation.Http.Controllers
             return Ok(user);
         }
 
-        [HttpGet, ResponseType(typeof(User)),Route("AdminLoginValidate/{email}/{pass}")]
+        [HttpGet, ResponseType(typeof(User))]
         public IHttpActionResult Get(string email,string pass)
         {
             User user = ManagerBuilder.UserManager.GetAll().FirstOrDefault(x=> x.IsActive==true && x.IsAdmin==true && x.Email==email && x.Password==pass);
@@ -82,7 +82,8 @@ namespace DellaViaAutomation.Http.Controllers
             var existing = ManagerBuilder.UserManager.GetById(id);
             if (existing == null)
                 return NotFound();
-            ManagerBuilder.UserManager.Delete(existing);
+            ManagerBuilder.UserManager.GetById(id).IsActive = false; 
+            DataController.DbSave();
             return Ok();
         }
     }

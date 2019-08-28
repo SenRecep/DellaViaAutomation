@@ -1,3 +1,11 @@
 ﻿body {
-    padding-top: 65px;
+    padding-top: var(--mainnavbar-height);
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    background: #575f67;
 }

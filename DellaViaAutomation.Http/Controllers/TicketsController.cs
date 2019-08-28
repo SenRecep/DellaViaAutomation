@@ -66,6 +66,7 @@ namespace DellaViaAutomation.Http.Controllers
             if (existing == null)
                 return NotFound();
             ManagerBuilder.OrderManager.Delete(existing);
+            DataController.DbSave();
             return Ok();
         }
     }

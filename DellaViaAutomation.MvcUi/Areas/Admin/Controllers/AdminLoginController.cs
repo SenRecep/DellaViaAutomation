@@ -36,9 +36,7 @@ namespace DellaViaAutomation.MvcUi.Areas.Admin.Controllers
                     ViewBag.AdminLoginStatus = 2;
             }
             else
-            {
                 ViewBag.AdminLoginStatus = 1;
-            }
             return View();
         }
     }

@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComplexType\ClassDataTransfer.cs" />
     <Compile Include="ComplexType\DataController.cs" />
     <Compile Include="ComplexType\ManagerBuilder.cs" />
     <Compile Include="Concreate\ApiCenter.cs" />

@@ -40,7 +40,7 @@ namespace DellaViaAutomation.Bll.Concreate
 
         public static async Task<User> AdminLogin(string email,string pass)
         {
-            HttpResponseMessage response = await client.GetAsync($"AdminLoginValidate/{email}/{pass}");
+            HttpResponseMessage response = await client.GetAsync($"Users?email={email}&pass={pass}");
             if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadAsAsync<User>();

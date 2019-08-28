@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Abstract\Infrastructure\IRepository.cs" />
     <Compile Include="Abstract\IRepositoryies.cs" />
+    <Compile Include="ComplexType\ClassDataTransfer.cs" />
+    <Compile Include="ComplexType\ClassExists.cs" />
     <Compile Include="ComplexType\EntityFramework\DataController.cs" />
     <Compile Include="ComplexType\EntityFramework\DellaViaAutomationDbModel.cs" />
     <Compile Include="ComplexType\EntityFramework\Migrations\Configuration.cs" />

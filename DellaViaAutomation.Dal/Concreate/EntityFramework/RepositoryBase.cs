@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DellaViaAutomation.Dal.ComplexType;
 namespace DellaViaAutomation.Dal.Concreate.EntityFramework
 {
     using ComplexType.EntityFramework;
@@ -38,11 +38,8 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
         public virtual void Update(T entity)
 
         {
-
-            dbSet.Attach(entity);
-
-            DataController.getDb().Entry(entity).State = EntityState.Modified;
-
+            T dbentity = dbSet.FirstOrDefault(x=>x.id==entity.id);
+            ClassDataTransfer.EntityTransmitter(entity,dbentity);
         }
 
         public virtual void Delete(T entity)
@@ -68,7 +65,15 @@ namespace DellaViaAutomation.Dal.Concreate.EntityFramework
 
         public bool Exists(T entity)
         {
-            return dbSet.Any<T>(x => x == entity);
+            bool exists = false;
+
+            foreach (T item in dbSet)
+            {
+                exists = item.Exists(entity, item);
+                if (exists==true)
+                    break;
+            }
+            return exists;
         }
 
         public virtual T GetById(long id, params string[] navigations)

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DellaViaAutomation.Entities.ComplexType;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace DellaViaAutomation.Entities.Concreate
 {
@@ -14,6 +16,8 @@ namespace DellaViaAutomation.Entities.Concreate
         public string Telephone { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
+        public string ImageId { get; set; }
+        public string OriginalFilename { get; set; }
         public virtual ICollection<UserAddress> UserAddresses { get; set; }
     }
     public partial class User

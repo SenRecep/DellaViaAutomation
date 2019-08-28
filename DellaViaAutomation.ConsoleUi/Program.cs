@@ -1,4 +1,5 @@
 ﻿using DellaViaAutomation.Bll.ComplexType;
+using DellaViaAutomation.Bll.Concreate;
 using DellaViaAutomation.Entities.ComplexType;
 using DellaViaAutomation.Entities.Concreate;
 using System;
@@ -12,12 +13,22 @@ namespace DellaViaAutomation.ConsoleUi
 {
     class Program
     {
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
             print("Program basladi");
 
-           
-            nesne_ozellikleri();
+
+            //nesne_ozellikleri();
+
+            var usertype = typeof(User);
+            foreach (var item in usertype.GetProperties())
+            {
+                if (item.CanWrite)
+                {
+                    print(item.Name);
+                }
+            }
+
 
             print("Islemler bitmistir");
             Console.ReadLine();

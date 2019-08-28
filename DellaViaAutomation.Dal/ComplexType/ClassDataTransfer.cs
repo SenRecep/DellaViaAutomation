@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DellaViaAutomation.Bll.ComplexType
+namespace DellaViaAutomation.Dal.ComplexType
 {
     public static class ClassDataTransfer
     {
@@ -29,16 +29,19 @@ namespace DellaViaAutomation.Bll.ComplexType
             {
                 foreach (System.Reflection.PropertyInfo pi in val1.GetType().GetProperties())
                 {
-                    string propName = pi.Name;
-                    var type = val1.GetType();
-                    var prop = type.GetProperty(propName);
-                    var value = prop.GetValue(val1, null);
-                    var myType = pi.PropertyType;
-                    System.Reflection.PropertyInfo propertyInfo = val2.GetType().GetProperty(propName);
-                    propertyInfo.SetValue(val2, ChangeType(value, propertyInfo.PropertyType), null);
+                    if (pi.CanWrite)
+                    {
+                        string propName = pi.Name;
+                        var type = val1.GetType();
+                        var prop = type.GetProperty(propName);
+                        var value = prop.GetValue(val1, null);
+                        var myType = pi.PropertyType;
+                        System.Reflection.PropertyInfo propertyInfo = val2.GetType().GetProperty(propName);
+                        propertyInfo.SetValue(val2, ChangeType(value, propertyInfo.PropertyType), null);
+                    }
                 }
             }
-            catch 
+            catch
             {
 
             }
@@ -46,7 +49,7 @@ namespace DellaViaAutomation.Bll.ComplexType
             ret = val2;
             return ret;
         }
-        private static object ChangeType(object value, Type conversion)
+        public static object ChangeType(object value, Type conversion)
         {
             object obj = null;
 
@@ -62,7 +65,7 @@ namespace DellaViaAutomation.Bll.ComplexType
 
                 obj = Convert.ChangeType(value, t);
             }
-            catch 
+            catch
             {
 
             }
